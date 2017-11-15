@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-TrainguloService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TrainguloService"/>
+        <property name="wsdl-TrainguloService" location="xml-resources/web-service-references/TrainguloService/wsdl/localhost_8080/TrianguloService/TrainguloService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TrainguloService" destdir="${build.generated.dir}/jax-wsCache/TrainguloService" wsdl="${wsdl-TrainguloService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TrianguloService/TrainguloService?wsdl" xnocompile="true" xendorsed="true" package="Modelo">
+            <depends file="${wsdl-TrainguloService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TrainguloService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TrainguloService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TrainguloService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/TrainguloService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/Modelo"/>
+    </target>
+    <target name="wsimport-client-TrainguloService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TrainguloService_1"/>
+        <property name="wsdl-TrainguloService_1" location="xml-resources/web-service-references/TrainguloService_1/wsdl/localhost_8080/TrianguloService/TrainguloService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TrainguloService_1" destdir="${build.generated.dir}/jax-wsCache/TrainguloService_1" wsdl="${wsdl-TrainguloService_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TrianguloService/TrainguloService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-TrainguloService_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TrainguloService_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TrainguloService_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TrainguloService_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/TrainguloService_1"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/controle"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-TrainguloService, wsimport-client-TrainguloService_1"/>
+</project>
